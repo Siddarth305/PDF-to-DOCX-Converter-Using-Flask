@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF to Doc Conversion</title>
+    <style>
+        /* Set the background color for the entire page */
+        body {
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Create a wider centered box for the upload form */
+        .upload-box {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 400px;
+        }
+
+        /* Style the heading */
+        h1 {
+            margin-bottom: 25px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        /* Hide the default file input */
+        input[type="file"] {
+            display: none;
+        }
+
+        /* Style the custom file input label */
+        label {
+            background-color: #007BFF;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            display: inline-block;
+        }
+
+        /* Style the "No file chosen" text */
+        .file-info {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Style the upload button */
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="upload-box">
+        <h1>Upload PDF</h1>
+        <form action="/index" method="POST" enctype="multipart/form-data">
+            <label for="file-upload">Choose File</label>
+            <input type="file" id="file-upload" name="filename" accept="application/pdf" required>
+            <div class="file-info">No file chosen</div>
+            <input type="submit" value="Upload">
+        </form>
+    </div>
+
+    <script>
+        const fileInput = document.getElementById('file-upload');
+        const fileInfo = document.querySelector('.file-info');
+
+        fileInput.addEventListener('change', function() {
+            if (fileInput.files.length > 0) {
+                fileInfo.textContent = fileInput.files[0].name;
+            } else {
+                fileInfo.textContent = 'No file chosen';
+            }
+        });
+    </script>
+</body>
+</html>

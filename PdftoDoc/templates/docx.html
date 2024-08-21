@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download DOCX</title>
+    <style>
+        /* Set the background color for the entire page */
+        body {
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Create a centered box for the download form */
+        .download-box {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        /* Style the heading */
+        h1 {
+            margin-bottom: 25px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        /* Style the download button */
+        .btn {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Add an icon to the button */
+        .btn i {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="download-box">
+        <h1>Download DOCX</h1>
+        <form action="/docx" method="POST">
+            <input value="{{variable}}" id="3" name="filename" type="hidden">
+            <button class="btn"><i class="fa fa-download"></i>Download</button>
+        </form>
+    </div>
+</body>
+</html>
